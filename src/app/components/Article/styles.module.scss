@@ -1,0 +1,32 @@
+.article {
+    color: sienna;
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    margin: 20px;
+    border: aliceblue 1px solid;
+
+    &.selected {
+        color: dodgerblue;
+    }
+}
+@media (min-width: 320px) and (max-width: 1024px) {
+    .article {
+        color: sienna;
+        width: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 20px;
+        margin: 20px;
+        border: aliceblue 1px solid;
+
+        &.selected {
+            color: dodgerblue;
+        }
+    }
+}
