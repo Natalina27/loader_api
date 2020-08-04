@@ -7,10 +7,10 @@ import {useApiLoader} from './useApiLoader';
 import Styles from './styles.module.scss';
 
 export const News = () => {
-    const {db} = useApiLoader();
-    const articleJSX = db.map(({created, ...props}) => (
-        <Article key={created} {...props} />
-    ));
+    const {db, isFetching} = useApiLoader();
+     const articleJSX = isFetching ? db.map(({created, ...props}) => (
+          <Article key={created} {...props} />
+    )): 'Загрузка данных...';
 
     return (
         <section className={Styles.wrap}>
