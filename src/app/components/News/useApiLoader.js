@@ -7,7 +7,7 @@ import { api } from '../../../api';
 export const useApiLoader = () => {
     console.log('hook render');
     const [db, setDb] = useState([]);
-    const [isFetching, setIsFetching] = useState(false);
+    const [isFetching, setIsFetching] = useState(true);
 
 
     useEffect(() => {
@@ -15,9 +15,7 @@ export const useApiLoader = () => {
             const response = await api.news.fetch();
             const data = await response.json();
             setDb(data);
-            setTimeout(() => {
-                setIsFetching(true);
-            }, 3000)
+            setIsFetching(false);
         })();
     }, []);
 

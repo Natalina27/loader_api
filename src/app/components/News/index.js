@@ -8,9 +8,11 @@ import Styles from './styles.module.scss';
 
 export const News = () => {
     const {db, isFetching} = useApiLoader();
-     const articleJSX = isFetching ? db.map(({created, ...props}) => (
+     const articleJSX = isFetching ?
+         'Загрузка данных...'
+         : db.map(({created, ...props}) => (
           <Article key={created} {...props} />
-    )): 'Загрузка данных...';
+    )) ;
 
     return (
         <section className={Styles.wrap}>
